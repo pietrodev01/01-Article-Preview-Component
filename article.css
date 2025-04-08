@@ -15,7 +15,7 @@
 /********** Article Component **********/
 
 body {
-  background-color: #9daec2;
+  background-color: #ecf2f8;
 }
 
 .root-container {
@@ -24,7 +24,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 95vh;
-  background-color: #9daec2;
+  background-color: #ecf2f8;
 }
 
 .flex-container {
@@ -105,9 +105,9 @@ body {
 /********** Active Link **********/
 
 .active {
-  /* display: flex; */
   /* border: 2px solid red; */
-  display: none;
+  display: flex;
+  visibility: hidden;
   justify-content: space-between;
   align-items: center;
   gap: 20px;
@@ -116,10 +116,15 @@ body {
   position: absolute;
   z-index: 1;
   border-radius: 12px;
+  transition-property: opacity;
+  transition-duration: 300ms;
+  opacity: 0;
 }
 
 .visible {
   display: flex;
+  visibility: visible;
+  opacity: 1;
 }
 
 .share-active {
@@ -145,15 +150,16 @@ body {
 
   .footer {
     position: relative;
-    padding: 16px 0;
+    padding: 16px;
   }
 
   .active {
-    display: none;
+    display: flex;
+    visibility: hidden;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
-    padding: 40px 8px;
+    padding: 40px 16px;
     width: 100%;
     background-color: #48556a;
     position: absolute;
@@ -162,15 +168,21 @@ body {
     border-radius: 0;
     border-bottom-left-radius: 12px;
     border-bottom-right-radius: 12px;
+    transition-property: opacity;
+    transition-duration: 300ms;
+    opacity: 0;
     /* border: 2px solid red; */
   }
 
   .visible {
     display: flex;
+    visibility: visible;
+    opacity: 1;
   }
 
   .share-active {
     display: inline;
+    width: 100%;
   }
 
   .share-with-links {
@@ -186,10 +198,6 @@ body {
     padding: 8px;
     width: 40px;
     height: 40px;
-  }
-
-  .share-active {
-    width: 100%;
   }
 
   .share-btn-container-active img {
